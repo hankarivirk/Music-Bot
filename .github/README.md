@@ -5,13 +5,13 @@
 <b>Telegram Group Calls Streaming Bot</b><br>
 Supports YouTube, Spotify, Resso, Apple Music, SoundCloud and M3U8 links.
 
-<a href="https://github.com/YourUsername/YourRepo/stargazers">
-    <img src="https://img.shields.io/github/stars/YourUsername/YourRepo?color=blueviolet&logo=github&logoColor=black&style=for-the-badge" alt="Stars"/>
+<a href="https://github.com/hankarivirk/Music-Bot/stargazers">
+    <img src="https://img.shields.io/github/stars/hankarivirk/Music-Bot?color=blueviolet&logo=github&logoColor=black&style=for-the-badge" alt="Stars"/>
 </a>
-<a href="https://github.com/YourUsername/YourRepo/network/members">
-    <img src="https://img.shields.io/github/forks/YourUsername/YourRepo?color=blueviolet&logo=github&logoColor=black&style=for-the-badge" alt="Forks"/>
+<a href="https://github.com/hankarivirk/Music-Bot/network/members">
+    <img src="https://img.shields.io/github/forks/hankarivirk/Music-Bot?color=blueviolet&logo=github&logoColor=black&style=for-the-badge" alt="Forks"/>
 </a>
-<a href="https://github.com/YourUsername/YourRepo/blob/master/LICENSE">
+<a href="https://github.com/hankarivirk/Music-Bot/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"/>
 </a>
 <a href="https://www.python.org/">
@@ -43,7 +43,7 @@ Bot name and username are auto-detected from your <code>BOT_TOKEN</code> at star
 
 - <a href="https://www.python.org">Python 3.10+</a> installed
 - <a href="https://deno.com/">deno</a> & <a href="https://ffmpeg.org/">ffmpeg</a> installed on your system
-- Required variables mentioned in <a href="https://github.com/YourUsername/YourRepo/blob/master/sample.env">sample.env</a>
+- Required variables mentioned in <a href="https://github.com/hankarivirk/Music-Bot/blob/master/sample.env">sample.env</a>
 
 <details>
     <summary>
@@ -54,7 +54,7 @@ Bot name and username are auto-detected from your <code>BOT_TOKEN</code> at star
 <h4>🐧 Linux/macOS</h4>
 
 ```bash
-git clone https://github.com/YourUsername/YourRepo && cd YourRepo
+git clone https://github.com/hankarivirk/Music-Bot && cd Music-Bot
 
 # Install uv
 curl -Ls https://astral.sh/uv/install.sh | sh
@@ -74,7 +74,7 @@ bash start
 <h4>🪟 Windows (PowerShell)</h4>
 
 ```bash
-git clone https://github.com/YourUsername/YourRepo && cd YourRepo
+git clone https://github.com/hankarivirk/Music-Bot && cd Music-Bot
 
 # Install uv
 irm https://astral.sh/uv/install.ps1 | iex
@@ -100,7 +100,7 @@ uv run python3 -m anony
     </summary>
 
 > Click on the button below to deploy on Heroku<br>
-    <a href="https://dashboard.heroku.com/new?template=https://github.com/YourUsername/YourRepo">
+    <a href="https://dashboard.heroku.com/new?template=https://github.com/hankarivirk/Music-Bot">
         <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku"/>
     </a>
 </details>
@@ -123,15 +123,15 @@ MONGO_URL=mongodb+srv://
 SESSION=BQgfh...AA
 
 # Optional branding — leave blank to use built-in defaults
-SUPPORT_CHANNEL=https://t.me/YourChannel
-SUPPORT_CHAT=https://t.me/YourSupportGroup
-GITHUB_REPO=https://github.com/YourUsername/YourRepo
+SUPPORT_CHANNEL=https://t.me/JattMusicSupport
+SUPPORT_CHAT=https://t.me/JattMusicUpdate
+GITHUB_REPO=https://github.com/hankarivirk/Music-Bot
 START_IMG=
 PING_IMG=
 DEFAULT_THUMB=
 ```
 
-> 📝 Check <a href="https://github.com/YourUsername/YourRepo/blob/master/config.py">config.py</a> for all available options.
+> 📝 Check <a href="https://github.com/hankarivirk/Music-Bot/blob/master/config.py">config.py</a> for all available options.
 </details>
 
 <hr>
@@ -171,14 +171,14 @@ Contributions are welcome!
 
 <h2>🗒️ License</h2>
 
-This project is licensed under the <b>MIT License</b> — see <a href="https://github.com/YourUsername/YourRepo/blob/master/LICENSE">LICENSE</a> for details.
+This project is licensed under the <b>MIT License</b> — see <a href="https://github.com/hankarivirk/Music-Bot/blob/master/LICENSE">LICENSE</a> for details.
 
 <hr>
 
 <h2>🤞 Updates and support</h2>
 
-- <a href="https://t.me/YourChannel">Updates channel</a>
-- <a href="https://t.me/YourSupportGroup">Support group</a>
+- <a href="https://t.me/JattMusicSupport">Updates channel</a>
+- <a href="https://t.me/JattMusicUpdate">Support group</a>
 
 <hr>
 
