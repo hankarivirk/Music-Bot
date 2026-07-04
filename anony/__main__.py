@@ -6,6 +6,7 @@
 import asyncio
 import signal
 import importlib
+import sys
 from contextlib import suppress
 
 from anony import (anon, app, config, db, logger,
@@ -23,6 +24,13 @@ async def idle():
     await stop_event.wait()
 
 async def main():
+    # Validate required environment variables and fail fast with a friendly message
+    missing = config.check()
+    if missing:
+        logger.error("Missing required environment variables: %s", ", ".join(missing))
+        logger.error("Please set the variables in your environment or .env file (see sample.env)")
+        sys.exit(1)
+
     await db.connect()
     await app.boot()
     await userbot.boot()
