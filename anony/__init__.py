@@ -3,16 +3,32 @@
 # This file is part of AnonXMusic
 
 
+import os
 import time
 import asyncio
 import logging
 from logging.handlers import RotatingFileHandler
 
+# Configuration must be available before we configure logging so we can
+# place logs outside the repository root by default.
+from config import Config
+
+config = Config()
+
+# Ensure logs directory exists (only if a directory was provided)
+_log_dir = os.path.dirname(config.LOG_PATH)
+if _log_dir:
+    try:
+        os.makedirs(_log_dir, exist_ok=True)
+    except Exception:
+        # If we can't create the log dir, fall back to current working dir
+        config.LOG_PATH = os.path.basename(config.LOG_PATH)
+
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s: %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
     handlers=[
-        RotatingFileHandler("log.txt", maxBytes=10485760, backupCount=5),
+        RotatingFileHandler(config.LOG_PATH, maxBytes=10485760, backupCount=5),
         logging.StreamHandler(),
     ],
     level=logging.INFO,
@@ -27,10 +43,10 @@ logger = logging.getLogger(__name__)
 
 __version__ = "3.0.3"
 
-from config import Config
+# Note: we intentionally do NOT call config.check() at import time. The
+# application should validate required environment variables during startup
+# so that importing this package in tests or tooling doesn't exit the process.
 
-config = Config()
-config.check()
 tasks = []
 boot = time.time()
 
