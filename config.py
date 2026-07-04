@@ -22,9 +22,12 @@ class Config:
         self.SESSION2 = getenv("SESSION2", None)
         self.SESSION3 = getenv("SESSION3", None)
 
-        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/YourChannel")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/YourSupportGroup")
-        self.GITHUB_REPO = getenv("GITHUB_REPO", "https://github.com/YourUsername/YourRepo")
+        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/JattMusicSupport")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/JattMusicUpdate")
+        self.GITHUB_REPO = getenv("GITHUB_REPO", "https://github.com/hankarivirk/Music-Bot")
+
+        # logging path configurable so logs don't accidentally end up in repo root
+        self.LOG_PATH = getenv("LOG_PATH", "logs/log.txt")
 
         self.AUTO_LEAVE: bool = getenv("AUTO_LEAVE", "False").lower() == "true"
         self.AUTO_END: bool = getenv("AUTO_END", "False").lower() == "true"
@@ -45,10 +48,15 @@ class Config:
         # Set these in your .env to fully customize the bot's visuals — no code changes needed.
 
     def check(self):
+        """Return a list of missing required environment variable names.
+
+        This method intentionally does NOT exit the process. Callers should
+        decide how to handle missing values (log, raise, or exit) so import-time
+        errors are avoided.
+        """
         missing = [
             var
             for var in ["API_ID", "API_HASH", "BOT_TOKEN", "MONGO_URL", "LOGGER_ID", "OWNER_ID", "SESSION1"]
             if not getattr(self, var)
         ]
-        if missing:
-            raise SystemExit(f"Missing required environment variables: {', '.join(missing)}")
+        return missing
